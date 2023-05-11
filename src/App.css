@@ -1,0 +1,118 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: 600;
+}
+/* box-sizing - wyrównywanie jakby do siebie elementów w takim "boxie" */
+/* * oznacza że działa css globalnie */
+
+/* .container da nam ramke na calosc */
+.container{
+  width: 500px;
+  height: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+/* display: flex; da nam to, że będą się nie układać elementy pod sobą, ale obok siebie /*
+/*Jak coś chcemy wyśrodkować to dajemy rodzicowi position relative (w tym przypadku jest to div root domyślnie) 
+i dziecku dajemy position absolute, top 50%, left 50% i transform: translate(-50%, -50%) */
+
+
+/*Jak dajemy coś z % to odnosi się to zawsze w stosunku do rodzica*/
+/*Jak odwołujemy się do elementu wbudowanego w html jak np. form to nie dajemy kropki*/
+form {
+  height: 100%;
+  width: 50%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 2px solid black;
+}
+
+label{
+  font-size: 25px;
+  margin-bottom: 10px;
+  font-weight: 600px; 
+}
+
+input{
+  border: 2px solid black;
+  font-weight: 600px;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+/*input:focus daje nam to ze nie podkresla sie cale okienko przy klikaniu go*/
+
+input:focus{
+  outline: none;
+}
+
+::placeholder{
+  color: grey;
+  font-size: 18px;
+}
+
+button{
+  width: 70px;
+  align-self: end;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  padding: 5px;
+  font-weight: 600px;
+  font-size: 18px;
+  margin-top: 10px;
+  cursor: pointer;
+  /*cursor: pointer zamienia na łapkę ikonę myszki*/
+}
+
+/*Tu sie zaczynaja style dla listy studentow*/
+/*-------------------------------*/
+
+.StudentsGradeWrapper {
+  height: 100%;
+  width: 50%;
+  padding: 25px; 
+  overflow-y: auto;
+}
+
+h1{
+  font-size: 25px; 
+  margin-bottom: 30px;
+}
+
+ul{
+  width: 100%;
+  height: auto;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /* przypomnienie, display daje je obok siebie, flex-direction:column daje je jako kolumny*/
+  /*gap: 20px;*/
+  /* gap daje lukę pomiędzy nimi na 20px*/
+  list-style-type: none;
+  /* list-style-type:none usuwa dekoracje, w tym przypadku kropke */
+}
+
+li{
+  justify-content: space-between;
+  /*justify-content: space-between daje luke pomiedzy itemami miedzy soba */
+  display: flex;
+  margin-top: 20px;
+  border: 2px solid black;
+  font-weight: 600px;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 8px;
+}
+
